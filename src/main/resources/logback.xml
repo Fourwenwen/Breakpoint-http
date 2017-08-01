@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <!-- 控制器输出地 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <!-- 文件输出地 -->
+    <appender name="FILE"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/mnt/data/applogs/qro/qro.log</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- 非当天的Log文件压缩备份为 log_zip_back/pushio_base.2014-08-10.zip -->
+            <fileNamePattern>/mnt/data/applogs/bp-http/log_zip_back/bp-http%d{yyyy-MM-dd}.zip</fileNamePattern>
+            <!-- 超过30天的备份文件会被删除 -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <!-- 单独文件输出地 -->
+    <appender name="stand_alone_file"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/mnt/data/applogs/bp-http/stand_alone/sys_one.log</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- 非当天的Log文件压缩备份为 log_zip_back/pushio_base.2014-08-10.zip -->
+            <fileNamePattern>/mnt/data/applogs/bp-http/stand_alone/log_zip_back/sys_one%d{yyyy-MM-dd}.zip
+            </fileNamePattern>
+            <!-- 超过30天的备份文件会被删除 -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <!-- 日志级别 TRACE、DEBUG、INFO、WARN ERROR -->
+    <logger name="org.apache" level="INFO"/>
+    <logger name="com.mindmedia" level="DEBUG"/>
+
+    <!-- 根日志输出配置 -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>

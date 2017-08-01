@@ -1,0 +1,26 @@
+# Server settings (ServerProperties)
+server:
+  port: 9090
+  contextPath: /
+  # Tomcat specifics
+  tomcat:
+    # 打开Tomcat的Access日志，并可以设置日志格式的方法
+    # accessLogEnabled: false
+    protocolHeader: x-forwarded-proto
+    remoteIpHeader: x-forwarded-for
+    basedir:
+    backgroundProcessorDelay: 30
+  session:
+    timeout: 30 # secs
+
+#log
+logging:
+  config: classpath:logback.xml
+  level: info
+
+# 默认的profile为dev，其他环境通过指定启动参数使用不同的profile，比如：
+#   测试环境：java -jar my-spring-boot.jar --spring.profiles.active=test
+#   生产环境：java -jar my-spring-boot.jar --spring.profiles.active=prod
+spring:
+  profiles:
+    active: dev
