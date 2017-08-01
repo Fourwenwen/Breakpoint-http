@@ -49,7 +49,7 @@ Spring Boot用来简化Spring应用的初始搭建以及开发过程，一个约
 ## 使用说明
 <a name="获取代码"></a>
 ### 获取代码
-* github:<https://github.com/Fourwenwen/Breakpoint-http.git>
+* GitHub:<https://github.com/Fourwenwen/Breakpoint-http.git>
 * OSChina项目主页: <https://git.oschina.net/Fourwenwen/breakpoint-http.git><br>
 持续更新。
 
@@ -242,7 +242,7 @@ Spring Boot用来简化Spring应用的初始搭建以及开发过程，一个约
 <a name="总结"></a>
 ## 总结
 &emsp;&emsp;身为一个具有拖延症的程序猿，写个文档及其不容易，这方面还是优待加强，写代码时间都还没写这个文档长，并且写了那么久还那么烂的文档。实在抱歉，望谅解。  
-&emsp;&emsp;项目的Bug和改进点，可在评论去留言或者在OSChina上以issue的方式直接提交给我，谢谢大家。
+&emsp;&emsp;项目的Bug和改进点，可在评论去留言或者在GitHub或者OSChina上以issue的方式直接提交给我，谢谢大家。
 
 ##参考文献
 
