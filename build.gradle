@@ -6,7 +6,7 @@ apply plugin: 'war'
 apply plugin: 'maven'
 apply plugin: 'spring-boot'
 
-sourceCompatibility = 1.7
+sourceCompatibility = 1.8
 
 buildscript {
     repositories {
