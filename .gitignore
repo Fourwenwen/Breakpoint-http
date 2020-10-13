@@ -27,6 +27,3 @@ dependency-reduced-pom.xml
 *.idea
 
 README.html
-gradlew
-gradlew.bat
-gradle
